@@ -30,7 +30,7 @@ class Rectangle:
         """
         Returns a width instance
         """
-        return self.__weith
+        return self.__width
 
     @property
     def height(self):
@@ -75,7 +75,7 @@ class Rectangle:
         b = self.__width
         if a == 0 or b == 0:
             return 0
-        return 2 * (a + b)
+        return (2 * (a + b))
 
     def __str__(self):
         """
