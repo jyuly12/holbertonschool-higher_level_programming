@@ -1,0 +1,61 @@
+===========================
+The "0-add-integer" module
+===========================
+
+Using "add_integer"
+-------------------
+
+this is a test file for add_integer function that consists of adding two numbers.
+
+Import function:
+  >>> add_integer = __import__("0-add_integer").add_integer
+
+Add two numbers:
+
+  >>> add_integer(5, 4)
+  9
+
+::
+
+  >>> add_integer(-5, 8)
+  3
+
+Using float numbers:
+
+  >>> add_integer(3.9, 4.2)
+  7
+
+::
+
+  >>> add_integer(5.2, -3)
+  2
+
+Whithout values:
+
+  >>> add_integer()
+  Traceback (most recent call last):
+  TypeError: add_integer() missing 1 required positional argument: 'a'
+
+No second value:
+
+  >>> add_integer(5)
+  103
+
+The value is not valid:
+
+  >>> add_integer("Hello", 12)
+  Traceback (most recent call last):
+  TypeError: a must be an integer
+
+::
+
+  >>> add_integer('/0', 3)
+  Traceback (most recent call last):
+  TypeError: a must be an integer
+
+::
+
+  >>> add_integer([], "World")
+  Traceback (most recent call last):
+  TypeError: a must be an integer
+  

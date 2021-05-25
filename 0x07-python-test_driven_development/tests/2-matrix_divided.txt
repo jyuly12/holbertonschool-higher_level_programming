@@ -1,0 +1,66 @@
+==============================
+The "2-matrix_divided" module
+==============================
+
+Using "matrix_divided"
+-----------------------
+
+This is the test file for the function that is responsible for dividing
+the values ​​of a matrix by a number defined by the main function.
+
+Import function:
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Basic matrix division:
+
+    >>> matrix = [[4, 9, 5], [10, 12, 97]]
+    >>> matrix_divided(matrix, 2)
+    [[2.0, 4.5, 2.5], [5.0, 6.0, 48.5]]
+
+Float item division:
+
+    >>> matrix = [[5.9, 7.5, 10.3], [7.23, 5.13, 3.15]]
+    >>> matrix_divided(matrix, 3)
+    [[1.97, 2.5, 3.43], [2.41, 1.71, 1.05]]
+
+Divide by 0:
+
+    >>> matrix = [[12.3, 5, 5.9], [3, 5, 8.6]]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+Row of different size: 
+
+    >>> matrix = [[5, 4, 2], [6, 9, 3, 7]]
+    >>> matrix_divided(matrix, 5)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+::
+
+    >>> matrix = [[5, 4, 2, 6], [7, 3, 7.4]]
+    >>> matrix_divided(matrix, 4)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+::
+    >>> matrix = [[], [2, 5, 8]]
+    >>> matrix_divided(matrix, 7)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+Wrong parameters:
+
+    >>> matrix = [["j", "k", "z"], [4, 5, 12]]
+    >>> matrix_divided(matrix, 6)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = [[2, 4, 6], [7, 12, 5]]
+    >>> matrix_divided(matrix, "hello")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+    

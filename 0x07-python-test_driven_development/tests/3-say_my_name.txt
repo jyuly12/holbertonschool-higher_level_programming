@@ -1,0 +1,53 @@
+===============================
+The "3-say_my_name.txt" module
+===============================
+
+Using "say_my_name"
+--------------------
+
+This is the test file of the function that prints a name
+and surname that is given in the main function.
+
+Import function:
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Basic test run:
+
+    >>> say_my_name("Julieth", "Gonzalez")
+    My name is Julieth Gonzalez
+
+First parameter is None:
+
+    >>> say_my_name(None, "Vergara")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Second parameter is None:
+
+    >>> say_my_name("Ana", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Empty:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+::
+
+    >>> say_my_name("Maria")
+    My name is Maria 
+
+Wrong parameters:
+
+    >>> say_my_name(2, "Carvajal")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("Jean", 12.7)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
