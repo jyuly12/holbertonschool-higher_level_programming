@@ -1,0 +1,63 @@
+=================================
+The "101-lazy_matrix_mul" module
+=================================
+
+Using "lazy_matrix_mul"
+------------------------
+
+This is the test file for the "sd" function that multiplies two matrices using the NumPy module.
+
+Import function:
+
+    >>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+Basic Test:
+
+    >>> m_a=[[2, 3, 5], [3, 4, 7]]
+    >>> m_b=[[5, 2], [3, 7], [1, 6]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[24, 55], [34, 76]]
+
+::
+
+    >>> m_a=[[1, 2], [3, 4]]
+    >>> m_b=[[5, 6], [7, 8]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[19, 24], [43, 50]]
+
+Negative values:
+
+    >>> m_a=[[-1, 2], [-3, -4]]
+    >>> m_b=[[0, 3], [1, 2]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    [[2, 1], [-4, -17]]
+
+empty matrix:
+
+    >>> m_a=[]
+    >>> m_b=[[1, 2], [2, 3]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
+
+::
+
+    >>> m_a=[[1, 2], [2, 3]]
+    >>> m_b=[]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+::
+
+    >>> lazy_matrix_mul()
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Wrong data:
+
+    >>> m_a=[["Hello", "World", 3], [2, 4, 6]]
+    >>> m_b=[[3, 9], [5, 7], [1, 2]]
+    >>> lazy_matrix_mul(m_a, m_b)
+    Traceback (most recent call last):
+    TypeError: invalid data type for einsum
