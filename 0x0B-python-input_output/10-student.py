@@ -33,7 +33,7 @@ class Student:
 
         new_dict = {}
 
-        if type(attrs) is list:
+        if type(attrs) == list:
             for i in attrs:
                 if i in self.__dic__:
                     new_dict[i] = self.__dict__[i]
