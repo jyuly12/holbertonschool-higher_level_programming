@@ -33,9 +33,11 @@ class Student:
 
         new_dict = {}
 
-        if type(attrs) == list:
+        if type(attrs) is not list:
+            raise TypeError("attrs is not a list")
+        else:
             for i in attrs:
-                if i in self.__dic__:
+                if i in self.__dict__:
                     new_dict[i] = self.__dict__[i]
 
         return new_dict
