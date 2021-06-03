@@ -1,0 +1,27 @@
+======================
+The 1-my_list" module
+======================
+
+Using "MyList" function
+------------------------
+
+Importing the function:
+
+	  >>> MyList = __import__("1-my_list").MyList
+
+Empty:
+
+	 >>>ml = MyList()
+	 >>> ml.print_sorted()
+	 []
+
+::
+	>>> my_list = MyList([1, 2, 3])
+        >>> print(my_list)
+	[1, 2, 3]
+
+::
+
+	>>> my_list = MyList([1, 2], [3, 4])
+	Traceback (most recent call last):
+        TypeError: list() takes at most 1 argument (2 given)
