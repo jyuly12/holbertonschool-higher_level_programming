@@ -17,26 +17,29 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-# Getters and setters of all arguments
-
     @property
     def width(self):
+        """Width getter"""
         return self.__width
 
     @property
     def height(self):
+        """Height getter"""
         return self.__height
 
     @property
     def x(self):
+        """x getter"""
         return self.__x
 
     @property
     def y(self):
+        """y getter"""
         return self.__y
 
     @width.setter
     def width(self, value):
+        """Defines width setter"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -45,6 +48,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """Defines height setter"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -53,6 +57,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """Defines x setter"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -61,6 +66,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """Defines y setter"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -73,7 +79,7 @@ class Rectangle(Base):
         """Returns the Rectangle area"""
         a = self.__width
         b = self.__height
-        return a * b
+        return (a * b)
 
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
@@ -91,14 +97,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """ This method returns rectangle data"""
-
         id = self.id
         x = self.x
         y = self.y
         w = self.width
         h = self.height
 
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(id, x, y, w, h)
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(id, x, y, w, h))
 
     def update(self, *args, **kwargs):
         """ defines Update method """
