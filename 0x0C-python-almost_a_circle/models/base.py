@@ -41,7 +41,7 @@ class Base:
         if list_objs is not None:
             for i in list_objs:
                 lists.append(cls.to_dictionary(i))
-        with open(filename, 'w') as files:
+        with open(file_name, 'w') as files:
             files.write(cls.to_json_string(lists))
 
     @staticmethod
@@ -62,7 +62,7 @@ class Base:
                 dic = cls(1, 1)
             else:
                 dic = cls(1)
-            new.update(**dictionary)
+            dic.update(**dictionary)
             return dic
 
     @classmethod
