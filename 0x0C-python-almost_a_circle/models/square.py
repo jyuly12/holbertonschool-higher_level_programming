@@ -39,17 +39,17 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """ defines Update method """
         if args and len(args):
-            num = 0
+            num = 1
             for i in args:
-                if num is 1:
+                if num == 1:
                     self.id = i
-                if num is 2:
+                if num == 2:
                     self.size = i
-                if num is 3:
+                if num == 3:
                     self.x = i
-                if num is 4:
+                if num == 4:
                     self.y = i
-
+                num += 1
         else:
             for i in kwargs:
                 if i == "id":
