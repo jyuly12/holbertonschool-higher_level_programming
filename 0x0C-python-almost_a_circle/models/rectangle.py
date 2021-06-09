@@ -11,11 +11,11 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialice the rectangle"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -23,14 +23,14 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-        def width(self, value):
-            """Defines width setter"""
-            if type(value) is not int:
-                raise TypeError("width must be an integer")
-            if value <= 0:
-                raise ValueError("width must be > 0")
-            else:
-                self.__width = value
+    def width(self, value):
+        """Defines width setter"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__width = value
 
     @property
     def height(self):
@@ -112,16 +112,18 @@ class Rectangle(Base):
         if args and len(args):
             num = 0
             for i in args:
-                if num is 1:
+                if num == 1:
                     self.id = i
-                if num is 2:
+                if num == 2:
                     self.width = i
-                if num is 3:
+                if num == 3:
                     self.height = i
-                if num is 4:
+                if num == 4:
                     self.x = i
-                if num is 5:
+                if num == 5:
                     self.y = i
+            num += 1
+
         else:
             for i in kwargs:
                 if i == "id":
@@ -143,7 +145,7 @@ class Rectangle(Base):
         """Returns the dictionary representation of a Rectangle"""
 
         my_dict = {'id': self.id,
-                   'width': self.width
+                   'width': self.width,
                    'height': self.height,
                    'x': self.x,
                    'y': self.y}
