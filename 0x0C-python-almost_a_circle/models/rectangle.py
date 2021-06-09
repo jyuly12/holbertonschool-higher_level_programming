@@ -110,7 +110,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ defines Update method """
         if args and len(args):
-            num = 0
+            num = 1
             for i in args:
                 if num == 1:
                     self.id = i
@@ -122,7 +122,7 @@ class Rectangle(Base):
                     self.x = i
                 if num == 5:
                     self.y = i
-            num += 1
+                num += 1
 
         else:
             for i in kwargs:
